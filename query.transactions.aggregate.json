@@ -1,0 +1,1 @@
+db.transactions.aggregate([{$match: {transaction_count: {$lt: 100}}}, {$group: {_id: "$account_id", totalQuantity: {$sum: "transaction_count"}}}])
